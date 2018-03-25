@@ -1,0 +1,51 @@
+<div class="row">
+
+  <div class="col-xs-1 col-sm-1 col-md-1 ">
+  </div>
+  <div class="col-xs-3 col-sm-3 col-md-3">
+    <h3>Devoure These Burgers!</h3>
+
+    {{#each burgers}} {{#unless devoured}}
+    <p>{{this.id}}. {{this.burger_name}}
+      <button class="change-devour" data-id="{{id}}" data-newdevoured="{{devoured}}">Devour</button>
+    </p>
+    {{/unless}} {{/each}}
+  </div>
+
+  <div class="col-xs-4 col-sm-4 col-md-4" id="sign">
+    <img src="assets/burger.jpg">
+    <h1>Eat-Da-Burger!</h1>
+  </div>
+
+  <div class="col-xs-3 col-sm-3 col-md-3">
+    <h3>Devoured Burgers</h3>
+
+    {{#each burgers}} {{#if devoured}}
+    <p class="devour">{{this.burger_name}} {{/if}} {{/each}}
+  </div>
+
+  <div class="col-xs-1 col-sm-1 col-md-1">
+  </div>
+</div>
+
+
+
+<div class="row">
+
+  <div class="col-xs-12 col-sm-12 col-md-12" id="addBurger">
+
+    <form class="create-form">
+      <p class="white-text">Enter the type of burger you would like to eat and then Click 'Add The Burger' button!</p>
+
+      <div>
+        <label class="white-text" for="ca">Please Enter The Name of the Burger:</label>
+        <input type="text" id="ca" name="burger_name">
+        <input type="hidden" name="devoured" value="0">
+      </div>
+      <br>
+      <button class="text" type="submit">Add The Burger!</button>
+    </form>
+
+
+  </div>
+</div>
